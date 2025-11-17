@@ -5,9 +5,11 @@ const HeroSection = () => {
     <section id="descubre" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-background">
       {/* ... (Fondo) ... */}
       <div className="absolute inset-0">
-        <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm bg-background">
-          COLLAGE DE FONDO AQUÍ
-        </div>
+        <img
+                  src="/images/Mesa_de_trabajo_1.png" // <-- CAMBIA ESTA RUTA
+                  alt="Fondo de la nueva colección" // <-- Cambia el texto alternativo
+                  className="w-full h-full object-cover"
+                />
       </div>
 
       {/* Contenedor principal: sigue siendo flex-col para apilar verticalmente */}
