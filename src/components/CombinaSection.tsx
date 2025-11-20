@@ -18,10 +18,10 @@ const CombinaSection = () => {
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-abril tracking-tight">
             EL COLOR
           </h2>
-          <p className="text-2xl md:text-3xl font-light tracking-widest my-1 md:my-2 ml-8 md:ml-52">
+          <p className="text-2xl md:text-3xl font-light tracking-widest my-1 md:my-2 ml-8 md:ml-52 italic">
             QUE DESPIERTA
           </p>
-          <h3 className="text-5xl md:text-7xl lg:text-8xl font-abril tracking-tight ml-16 md:ml-32">
+          <h3 className="text-5xl md:text-7xl lg:text-8xl font-abril tracking-tight ml-16 md:ml-32 italic">
             LA PRIMAVERA
           </h3>
         </div>
