@@ -4,9 +4,9 @@ import Autoplay from "embla-carousel-autoplay";
 const CombinaSection = () => {
   const carouselImages = [
     { id: 1, src: "/images/SECCION3.png", alt: "Primavera 1" },
-    { id: 2, src: "/images/prueba2.jpg", alt: "Primavera 2" },
-    { id: 3, src: "/images/prueba2.jpg", alt: "Primavera 3" },
-    { id: 4, src: "/images/prueba2.jpg", alt: "Primavera 4" },
+    { id: 2, src: "/images/placeholder.jpg", alt: "Primavera 2" },
+    { id: 3, src: "/images/placeholder.jpg", alt: "Primavera 3" },
+    { id: 4, src: "/images/placeholder.jpg", alt: "Primavera 4" },
   ];
 
   return (

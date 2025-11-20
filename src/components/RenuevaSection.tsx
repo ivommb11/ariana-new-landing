@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import backgroundImage from "/images/k1.jpeg"; // <--- Asegúrate que esta ruta sea correcta
+import backgroundImage from "/images/placeholder.jpg"; // <--- Asegúrate que esta ruta sea correcta
 
 const RenuevaSection = () => {
 
