@@ -27,19 +27,29 @@ const TendenciasSection = () => {
             </div>
           </div>
 
-          {/* Columna de Texto (ahora es más estrecha) */}
-          <div className="space-y-6 fade-in-up flex flex-col items-start" style={{ animationDelay: '0.2s' }}>
-            <h2 className="text-5xl md:text-6xl font-light font-abril">TENDENCIAS</h2>
+          {/* Columna de Texto */}
+                    {/* 1. QUITAMOS 'space-y-6'. Ahora controlamos los espacios manualmente. */}
+                    <div className="fade-in-up flex flex-col items-start" style={{ animationDelay: '0.2s' }}>
 
-            <p className="text-2xl md:text-3xl font-light italic opacity-90 pl-60 font-abril">
-              DE PRIMAVERA
-            </p>
+                      {/* 2. Agrupamos Título y Subtítulo en un div */}
+                      <div className="mb-2"> {/* Puedes añadir mb- aquí si quieres separar un poco el bloque del párrafo */}
+                        <h2 className="text-5xl md:text-6xl font-light font-abril leading-none">
+                          TENDENCIAS
+                        </h2>
 
-            <p className="text-sm md:text-base font-light leading-relaxed opacity-80 max-w-lg">
-              La moda de esta temporada se inspira en la elegancia atemporal y el minimalismo sofisticado.
-              Descubre las piezas que están marcando tendencia en las pasarelas y en las calles.
-            </p>
-          </div>
+                        {/* Aquí usamos el margen negativo para pegarlo a "TENDENCIAS" */}
+                        <p className="text-2xl md:text-3xl font-light italic opacity-90 pl-60 font-abril -mt-4">
+                          DE PRIMAVERA
+                        </p>
+                      </div>
+
+                      {/* 3. El párrafo ahora tiene su propio 'mt-8'.
+                           Esto lo separa del bloque de arriba. Aumenta el 8 si quieres bajarlo más. */}
+                      <p className="text-sm md:text-base font-light leading-relaxed opacity-80 max-w-lg mt-8">
+                        La moda de esta temporada se inspira en la elegancia atemporal y el minimalismo sofisticado.
+                        Descubre las piezas que están marcando tendencia en las pasarelas y en las calles.
+                      </p>
+                    </div>
 
         </div>
       </div>
