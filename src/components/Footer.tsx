@@ -16,8 +16,8 @@ const Footer = () => {
       { label: "Pinterest", href: "https://es.pinterest.com/zaraofficial/_created/", icon: <FaPinterest size={20} /> },
     ],
     secciones: [
-      { label: "EXPLORA", href: "#descubre" },    // HeroSection
-      { label: "DESCUBRE", href: "#tendencias" }, // TendenciasSection
+      { label: "EXPLORA", href: "#explora" },    // HeroSection
+      { label: "DESCUBRE", href: "#descubre" }, // TendenciasSection
       { label: "COMBINA", href: "#combina" },    // CombinaSection
       { label: "DESTACA", href: "#destaca" },    // RenuevaSection
     ],

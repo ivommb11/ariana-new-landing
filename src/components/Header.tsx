@@ -4,8 +4,8 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState("descubre");
 
   const navItems = [
-    { id: "descubre", label: "EXPLORA" },
-    { id: "tendencias", label: "DESCUBRE" },
+    { id: "explora", label: "EXPLORA" },
+    { id: "descubre", label: "DESCUBRE" },
     { id: "combina", label: "COMBINA" },
     { id: "destaca", label: "DESTACA" },
     { id: "renueva", label: "RENUEVA" },

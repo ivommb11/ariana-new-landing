@@ -1,44 +1,73 @@
+import React from 'react';
 import { Button } from "@/components/ui/button";
+
 
 const HeroSection = () => {
   return (
-    <section id="descubre" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-background">
-      {/* ... (Fondo) ... */}
-      <div className="absolute inset-0">
+    <section id = "explora" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+
+      {/* 1. FONDO DE PINCELADAS */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
         <img
-                  src="/images/Mesa_de_trabajo_1.png" // <-- CAMBIA ESTA RUTA
-                  alt="Fondo de la nueva colección" // <-- Cambia el texto alternativo
-                  className="w-full h-full object-cover fade-in-up"
-                />
+          src="/images/fondo-pinceladas.png"
+          alt="Fondo decorativo"
+          className="w-full h-full object-cover md:object-contain opacity-90 scale-110"
+        />
       </div>
 
-      {/* Contenedor principal: sigue siendo flex-col para apilar verticalmente */}
-      <div className="relative z-10 w-full h-64 md:h-80 bg-primary/70 backdrop-blur-sm
-                      flex flex-col items-center justify-center text-center px-6 fade-in-up">
+      {/* 2. CONTENIDO */}
+      <div className="relative z-10 flex flex-col items-center px-4 max-w-4xl mx-auto">
 
-        {/* 1. El Título (tal como estaba) */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl text-background mb-6 tracking-tight font-abril">
-          ❝NUEVA COLECCIÓN❞
-        </h1>
+        {/* Bloque de Títulos con posiciones personalizadas */}
+        <div className="relative w-full flex flex-col items-center leading-none text-brand-dark mb-6">
 
-        {/* === CAMBIO AQUÍ === */}
-        {/* 2. Nuevo 'div' para agrupar el párrafo y el botón */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-          <p className="text-background/90 text-sm md:text-base font-light italic">
-            La nueva colección que redefine tu estilo
-          </p>
+            {/* Primera línea: "¿Estás lista para" - Ligeramente a la IZQUIERDA
+                📍 Posición horizontal: -translate-x-[valor] (negativo = izquierda, positivo = derecha)
+                📏 Tamaño fuente: text-2xl md:text-3xl lg:text-4xl
+            */}
+            <span className="font-poppins italic font-light text-2xl md:text-3xl lg:text-7xl text-[#1A1A1A] self-center -translate-x-4 md:-translate-x-6 lg:-translate-x-12">
+              ¿Estás lista para
+            </span>
 
-          <Button
-            size="lg"
-            className="bg-[#8F8060] text-white hover:bg-[#8F8060]/90 px-8 py-6 text-sm tracking-wider whitespace-nowrap"
-            onClick={() => {
-                window.open('https://www.zara.com/pe/es/mujer-nuevo-l1180.html?v1=2544455', '_blank', 'noopener,noreferrer');
-            }}
-          >
-            EXPLORAR AHORA
-          </Button>
+            {/* Segunda línea: "RENOVAR" - Ligeramente a la DERECHA
+                📍 Posición horizontal: translate-x-[valor]
+                📏 Tamaño fuente: text-[4rem] md:text-[6rem] lg:text-[8rem]
+            */}
+            <h1 className="font-abril text-[4rem] md:text-[6rem] lg:text-[6rem] uppercase tracking-wide -mt-2 md:-mt-2 translate-x-4 md:translate-x-8 lg:translate-x-12">
+              RENOVAR
+            </h1>
+
+            {/* Tercera línea: "tu estilo en" - CENTRADA
+                📍 Posición horizontal: sin translate-x (centrado por defecto)
+                📏 Tamaño fuente: text-2xl md:text-3xl lg:text-4xl
+            */}
+            <span className="font-poppins italic font-light text-2xl md:text-3xl lg:text-7xl text-[#1A1A1A] self-center -mt-4 md:-mt-2 -translate-x-4 md:-translate-x-6 lg:-translate-x-16">
+              tu estilo en
+            </span>
+
+            {/* Cuarta línea: "PRIMAVERA?" - CENTRADA
+                📍 Posición horizontal: sin translate-x (centrado por defecto)
+                📏 Tamaño fuente: text-[4rem] md:text-[6rem] lg:text-[8rem]
+            */}
+            <h1 className="font-abril text-[4rem] md:text-[6rem] lg:text-[6rem] uppercase tracking-wide -mt-4 md:-mt-2">
+              PRIMAVERA?
+            </h1>
         </div>
-        {/* === FIN DEL CAMBIO === */}
+
+        {/* Párrafo descriptivo - Centrado */}
+        <p className="font-poppins text-gray-600 text-sm md:text-base max-w-xl leading-relaxed mb-8 text-center px-4">
+          Combina la versatilidad con la tendencia y una estética contemporánea que eleva cualquier look con naturalidad con nuestra nueva colección de primavera.
+        </p>
+
+        {/* Botón Verde - Centrado */}
+        <Button
+          className="bg-[#c5d68e] hover:bg-[#b8ca75] text-white font-poppins text-lg md:text-xl px-10 py-6 rounded-full shadow-sm hover:shadow-md transition-all"
+          onClick={() => {
+              window.open('https://www.zara.com/pe/es/mujer-nuevo-l1180.html?v1=2544455', '_blank', 'noopener,noreferrer');
+          }}
+        >
+          Conoce más
+        </Button>
 
       </div>
     </section>

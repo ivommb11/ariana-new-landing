@@ -23,6 +23,10 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        brand: {
+              green: "#CBDC86", // El color exacto del botón en la imagen
+              dark: "#1A1A1A",  // Color para el texto oscuro
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
