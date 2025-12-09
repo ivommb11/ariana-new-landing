@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 
 
 const HeroSection = () => {
+    const frontImageAnimation = "animate-[breathe_5s_ease-in-out_infinite]";
   return (
     <section id = "explora" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
 
@@ -11,7 +12,7 @@ const HeroSection = () => {
         <img
           src="/images/fondo-pinceladas.png"
           alt="Fondo decorativo"
-          className="w-full h-full object-cover md:object-contain opacity-90 scale-110"
+          className={`w-full h-full object-cover md:object-contain opacity-90 scale-110 ${frontImageAnimation}`}
         />
       </div>
 

@@ -1,127 +1,139 @@
-import React from "react";
+import React from 'react';
 
 const ArmarioSection = () => {
+  // 🎨 OPCIONES DE ANIMACIÓN PARA LA IMAGEN FRONTAL
+  // Descomenta solo UNA opción a la vez (quita los //)
 
-  const leftImages = [
-    { id: 1, src: "/images/placeholder.jpg", alt: "Explora" },
-    { id: 2, src: "/images/placeholder.jpg", alt: "She’s got the look" },
-    { id: 3, src: "/images/placeholder.jpg", alt: "Coming soon" },
-    { id: 4, src: "/images/placeholder.jpg", alt: "Extra" },
-  ];
+  // Opción 1: Flotación suave (recomendado) - Activa por defecto
+  const frontImageAnimation = "animate-[float_6s_ease-in-out_infinite]";
 
-  const rightImages = [
-    { id: 5, src: "/images/placeholder.jpg", alt: "She’s got the look" },
-    { id: 6, src: "/images/placeholder.jpg", alt: "Coming soon" },
-    { id: 7, src: "/images/placeholder.jpg", alt: "Explora" },
-    { id: 8, src: "/images/placeholder.jpg", alt: "Extra 2" },
-  ];
+  // Opción 2: Zoom suave pulsante
+  // const frontImageAnimation = "animate-[pulse_4s_ease-in-out_infinite]";
 
-  const hoverClasses = "hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer";
+  // Opción 3: Rotación muy suave
+  // const frontImageAnimation = "animate-[spin_20s_linear_infinite]";
+
+  // Opción 4: Respiración (escala)
+  // const frontImageAnimation = "animate-[breathe_5s_ease-in-out_infinite]";
 
   return (
-    <section id="destaca" className="bg-background">
-      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr_1.5fr] gap-8 md:gap-12 lg:gap-16 min-h-auto lg:min-h-screen">
+    <section id="destaca" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
 
-        {/* === Columna izquierda (Solo PC) === */}
-        <div className="hidden lg:grid w-full grid-cols-2 grid-rows-[2fr_1fr_1fr] gap-4">
-          <div className={`relative h-full row-start-1 row-end-4 col-start-1 ${hoverClasses}`}>
-            <img src={leftImages[0].src} alt={leftImages[0].alt} className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-          <div className={`relative h-full row-start-1 row-end-2 col-start-2 ${hoverClasses}`}>
-            <img src={leftImages[1].src} alt={leftImages[1].alt} className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-          <div className={`relative h-full row-start-2 row-end-3 col-start-2 ${hoverClasses}`}>
-            <img src={leftImages[2].src} alt={leftImages[2].alt} className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-          <div className={`relative h-full row-start-3 row-end-4 col-start-2 ${hoverClasses}`}>
-            <img src={leftImages[3].src} alt={leftImages[3].alt} className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-        </div>
+      {/* 1. FONDO PNG - Capa 1 (Fondo base)
+          📍 Esta es la imagen de fondo base
+          📏 object-cover = cubre todo el espacio
+          📏 object-contain = mantiene proporciones completas
+          📏 opacity-90 = 90% de opacidad (ajusta: opacity-80, opacity-100)
+      */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src="/images/armariofondo.png"
+          alt="Fondo decorativo"
+          className="w-full h-full object-cover md:object-contain opacity-90"
+        />
+      </div>
 
-        {/* ============================================== */}
-        {/* === TEXTO CENTRAL === */}
-        {/* ============================================== */}
+      {/* 2. IMAGEN FRONTAL - Capa 2 (Encima del fondo, sin color de fondo)
+          📍 Esta imagen va ENCIMA del fondo base
+          📍 Usa z-[5] para estar entre el fondo (z-0) y el texto (z-10)
+          📏 w-full h-full = ocupa 100% ancho y alto del contenedor
+          📏 object-cover = cubre TODO el espacio disponible (puede recortar)
+          📏 object-contain = muestra la imagen completa (puede dejar espacios)
+          💡 Esta imagen debe tener fondo transparente (PNG con alpha)
+          🎨 Animación aplicada con frontImageAnimation
+          ⚠️ Si no ocupa todo el alto, prueba cambiando md:object-contain a md:object-cover
+      */}
+      <div className="absolute inset-0 z-[5] pointer-events-none">
+        <img
+          src="/images/imagenesarmario.png"
+          alt="Elementos decorativos frontales"
+          className={`w-full h-full object-cover ${frontImageAnimation}`}
+        />
+      </div>
 
-        <div className="w-full flex flex-col justify-center py-20 lg:py-0 px-6">
+      {/* ESTILOS DE ANIMACIÓN PERSONALIZADOS */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
 
-          <div className="max-w-lg mx-auto text-center lg:text-left">
+        @keyframes breathe {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.05);
+          }
+        }
+      `}</style>
 
-            <div className="ml-0 lg:ml-16">
+      <div className="container mx-auto px-6 relative z-10">
 
-              {/* Bloque 1: "TU ARMARIO" */}
-              <div className="relative w-fit mx-auto lg:mx-0">
-                <h2 className="relative text-3xl md:text-4xl lg:text-5xl font-light leading-tight lg:ml-12 font-abril">
-                  <span className="absolute text-[#8f8060] text-6xl md:text-7xl lg:text-8xl -left-12 md:-left-14 -top-2">
-                    ❝
-                  </span>
-                  TU <span className="font-light">ARMARIO</span>
-                </h2>
-              </div>
+        {/* CONTENEDOR CENTRAL PARA TEXTO */}
+        <div className="relative max-w-7xl mx-auto min-h-[600px] flex items-center justify-center translate-x-8">
 
-              {/* Bloque 2: "renace" */}
-              <div className="mt-2 lg:-mt-8 ml-0 lg:ml-28">
-                <p className="text-6xl md:text-7xl lg:text-8xl font-abril leading-tight">
-                  renace
-                </p>
-              </div>
+          {/* TEXTO CENTRADO
+              📍 ALINEACIÓN: text-center (centrado)
+              📏 Ajusta tamaños de fuente según necesites
+              🔄 z-10 para estar sobre las imágenes de fondo
+          */}
+          <div className="relative flex flex-col items-center text-center px-4 md:px-8 z-10 max-w-2xl mx-auto">
 
-              {/* Bloque 3: "En primavera" */}
-              <div className="mt-2 lg:-mt-2 ml-0 lg:ml-10 w-fit mx-auto lg:mx-0 relative">
+            {/* BLOQUE DE TÍTULO
+                📍 items-start = alinea elementos a la izquierda
+            */}
+            <div className="flex flex-col items-start leading-none mb-8 w-full">
 
-                <p className="relative text-3xl md:text-4xl lg:text-5xl italic font-light text-primary leading-tight">
-                  En primavera
+              {/* "TU ARMARIO" - Abril Fatface
+                  📏 TAMAÑO FUENTE: text-3xl md:text-4xl lg:text-5xl
+                  📍 POSICIÓN HORIZONTAL: sin translate-x (alineado a la izquierda)
+                  Para mover: agrega translate-x-[valor] o -translate-x-[valor]
+              */}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A] font-abril uppercase tracking-wide self-start">
+                TU ARMARIO
+              </h2>
 
-                  {/* === CAMBIO AQUÍ: de '-right-12' a '-right-16' === */}
-                  <span className="absolute text-[#8f8060] not-italic text-6xl md:text-7xl lg:text-8xl -right-16 top-0">
-                    ❞
-                  </span>
-                </p>
-              </div>
+              {/* "renace" - Abril Fatface (MÁS GRANDE)
+                  📏 TAMAÑO FUENTE: text-5xl md:text-6xl lg:text-9xl
+                  📏 ESPACIADO VERTICAL: -mt-10 (muy cerca de línea anterior)
+                  📍 POSICIÓN HORIZONTAL: translate-x-28 (movido a la derecha)
+                  Para ajustar horizontal: cambia el valor translate-x-[número]
+              */}
+              <h2 className="text-5xl md:text-6xl lg:text-9xl text-[#1A1A1A] font-abril lowercase tracking-wide -mt-10 translate-x-16 self-start">
+                renace
+              </h2>
 
+              {/* "En primavera" - Poppins Italic
+                  📏 TAMAÑO FUENTE: text-2xl md:text-3xl lg:text-6xl
+                  📏 ESPACIADO VERTICAL: -mt-2 (cerca de línea anterior)
+                  📍 POSICIÓN HORIZONTAL: sin translate-x (alineado a la izquierda)
+                  Para mover: agrega translate-x-[valor] o -translate-x-[valor]
+              */}
+              <span className="text-2xl md:text-3xl lg:text-6xl text-[#1A1A1A] font-poppins font-light italic -mt-2 self-start">
+                En primavera
+              </span>
             </div>
 
-            {/* Bloque 4: Párrafo */}
-            <div className="mt-8 ml-0 lg:ml-12">
-              <p className="text-sm md:text-base font-light leading-relaxed text-muted-foreground text-center">
-                Corpo del testo, vibrante e pieno di vita, si muoveva con eleganza e grazia.
-                Ogni movimento era una danza, un’espressione di forza e bellezza che catturava
-                l’attenzione di chiunque osservasse. I muscoli si flettevano sotto la pelle,
-                mentre l’energia pulsava come un fiume in piena.
-              </p>
-            </div>
-          </div>
-        </div>
+            {/* PÁRRAFO DESCRIPTIVO
+                📏 TAMAÑO FUENTE: text-sm md:text-base
+                📏 ESPACIADO VERTICAL: mt-6 (espacio entre título y párrafo)
+                📏 ANCHO MÁXIMO: max-w-2xl
+                📍 ALINEACIÓN: text-left (alineado a la izquierda)
+                📍 self-start hace que el párrafo inicie donde inicia "En primavera"
+            */}
+            <p className="font-poppins text-gray-700 text-sm md:text-base leading-relaxed max-w-md mt-6 text-left self-start">
+              Esta colección celebra lo nuevo, colores ligeros,
+              siluetas frescas y piezas pensadas para reinventarte con la temporada. Descubre prendas que iluminan,
+              suavizan y transforman tu estilo con la naturalidad de un cambio que llega solo una vez al año.
+            </p>
 
-        {/* ============================================ */}
+          </div>
 
-
-        {/* === Columna derecha (Solo PC) === */}
-        <div className="hidden lg:grid w-full grid-cols-2 grid-rows-[1fr_1fr_2fr] gap-4">
-          <div className={`relative h-full col-start-1 col-end-3 row-start-1 row-end-2 ${hoverClasses}`}>
-            <img src={rightImages[0].src} alt={rightImages[0].alt} className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-          <div className={`relative h-full row-start-2 row-end-3 col-start-1 ${hoverClasses}`}>
-            <img src={rightImages[1].src} alt={rightImages[1].alt} className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-          <div className={`relative h-full row-start-2 row-end-4 col-start-2 ${hoverClasses}`}>
-            <img src={rightImages[2].src} alt={rightImages[2].alt} className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-          <div className={`relative h-full row-start-3 row-end-4 col-start-1 ${hoverClasses}`}>
-            <img src={rightImages[3].src} alt={rightImages[3].alt} className="absolute inset-0 w-full h-full object-cover" />
-          </div>
-        </div>
-
-        {/* === Cuadrícula para Móvil === */}
-        <div className="grid grid-cols-2 gap-4 lg:hidden px-6 pb-20">
-          {[...leftImages, ...rightImages].map((image) => (
-            <div key={image.id} className={`relative aspect-[3/4] ${hoverClasses}`}>
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-          ))}
         </div>
 
       </div>
