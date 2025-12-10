@@ -31,8 +31,8 @@ const RenuevaSection = () => {
             </h2>
 
             {/* SUBTÍTULO */}
-            <p className="text-lg md:text-3xl 2xl:text-4xl font-light tracking-widest text-primary italic font-poppins">
-              En la nueva colección
+            <p className="text-lg md:text-3xl 2xl:text-2xl font-light tracking-widest text-primary italic font-poppins">
+              Activa tu descuento con el código <span className= "font-bold"> ZARA25 </span> y ¡Descubre la nueva colección!
             </p>
 
             {/* BOTÓN */}
