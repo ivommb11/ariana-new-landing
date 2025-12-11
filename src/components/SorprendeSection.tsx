@@ -43,31 +43,31 @@ const SorprendeSection = () => {
             <div className="flex flex-col items-start leading-none mb-8 w-full">
 
               {/* 1. "¡La estación"
-                 📉 REBAJADO: text-2xl (móvil) -> text-3xl (tablet) -> text-5xl (laptop)
+                 CAMBIO: lg:text-[min(3.75rem,4vw)]
+                 Significa: "Usa 60px (3.75rem) como máximo, PERO si el 4% de la pantalla es menor, usa eso".
               */}
-              <span className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl text-[#1A1A1A] font-poppins font-light italic translate-x-2 lg:translate-x-6">
+              <span className="text-2xl lg:text-[min(3.75rem,4vw)] text-[#1A1A1A] font-poppins font-light italic translate-x-2 lg:translate-x-6">
                 ¡La estación
               </span>
 
               {/* 2. "que esperabas"
-                 📉 REBAJADO: Igual que arriba
+                 CAMBIO: Igual que arriba para consistencia
               */}
-              <span className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl text-[#1A1A1A] font-poppins font-light italic translate-x-6 lg:translate-x-20">
+              <span className="text-2xl lg:text-[min(3.75rem,4vw)] text-[#1A1A1A] font-poppins font-light italic translate-x-6 lg:translate-x-20 lg:mt-8">
                 que esperabas
               </span>
 
               {/* 3. "YA FLORECIÓ!"
-                 📉 REBAJADO: text-5xl (móvil) -> text-7xl (laptop) -> text-8xl (escritorio grande)
-                 Ya no usamos 9xl ni 11rem en pantallas normales.
+                 CAMBIO: lg:text-[min(8rem,6vw)]
+                 - 8rem (128px) es tu tamaño "text-9xl" original (el tope).
+                 - 6vw hace que en Laptop (1366px) baje a unos 82px (un tamaño perfecto, ni muy chico ni muy grande).
               */}
-              <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-[#1A1A1A] font-abril uppercase tracking-tight font-light -mt-1 lg:-mt-2 whitespace-nowrap">
+              <h2 className="text-5xl md:text-6xl lg:text-[min(8rem,6vw)] text-[#1A1A1A] font-abril uppercase tracking-tight font-light -mt-1 lg:mt-4 whitespace-nowrap">
                 YA FLORECIÓ!
               </h2>
             </div>
 
-            {/* PÁRRAFO
-               📉 REBAJADO: text-sm a text-lg (máximo)
-            */}
+            {/* PÁRRAFO */}
             <p className="font-poppins text-[#1A1A1A]
               text-sm md:text-base lg:text-lg xl:text-xl
               leading-relaxed
@@ -83,7 +83,7 @@ const SorprendeSection = () => {
               px-6 py-3 lg:px-10 lg:py-4
               rounded-full shadow-sm hover:shadow-md transition-all
               mt-8
-              translate-x-4 lg:translate-x-52" // Ajustado el translate para que no se vaya tan lejos
+              translate-x-4 lg:translate-x-52"
               onClick={() => {
                   window.open('https://www.zara.com/pe/es/mujer-nuevo-l1180.html?v1=2544455', '_blank', 'noopener,noreferrer');
               }}
