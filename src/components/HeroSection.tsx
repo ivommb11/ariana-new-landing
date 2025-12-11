@@ -41,8 +41,11 @@ const HeroSection = () => {
             </h1>
 
             {/* "tu estilo en" */}
-            <span className="font-poppins italic font-light text-[#1A1A1A] self-center -mt-2 md:mt-2 -translate-x-2 md:-translate-x-6 lg:-translate-x-28"
-              style={{ fontSize: 'clamp(1rem, 2.8vw, 4rem)' }}>
+            <span className="font-poppins italic font-light text-[#1A1A1A] self-center -mt-2 md:mt-2"
+              style={{
+                fontSize: 'clamp(1rem, 2.8vw, 4rem)',
+                transform: 'translateX(-5vw)'
+              }}>
               tu estilo en
             </span>
 
@@ -54,7 +57,7 @@ const HeroSection = () => {
         </div>
 
         {/* Párrafo descriptivo */}
-        <p className="font-poppins text-gray-600 text-xs sm:text-sm md:text-base 2xl:text-1xl max-w-xl 2xl:max-w-3xl leading-relaxed mb-8 text-center px-4">
+        <p className="font-poppins text-gray-600 text-xs sm:text-sm md:text-base 2xl:text-xl max-w-xl 2xl:max-w-3xl leading-relaxed mb-8 text-center px-4">
           Combina la versatilidad con la tendencia y una estética contemporánea que eleva cualquier look con naturalidad con nuestra nueva colección de primavera.
         </p>
 
