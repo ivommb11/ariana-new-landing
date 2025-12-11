@@ -25,19 +25,19 @@ const SorprendeSection = () => {
 
       <div className="container mx-auto px-6 relative z-10 w-full h-full">
 
-        <div className="grid md:grid-cols-[60%_40%] gap-8 items-center max-w-[120rem] mx-auto min-h-screen py-20 lg:-translate-x-12">
+        <div className="grid md:grid-cols-[60%_40%] gap-8 items-center max-w-[120rem] mx-auto min-h-screen py-20">
 
           <div className="flex flex-col items-start text-left py-12 self-center md:self-start md:pt-32 w-full">
 
             {/* TÍTULO - Usando vw para mantener proporciones */}
             <div className="flex flex-col items-start mb-8 w-full" style={{ lineHeight: '0.9' }}>
               <span className="font-poppins font-light italic text-[#1A1A1A]"
-                    style={{ fontSize: 'clamp(1.2rem, 2.5vw, 3.5rem)' }}>
+                    style={{ fontSize: 'clamp(1.2rem, 2.5vw, 3.5rem)', marginLeft: 'clamp(0.5rem, 1.5vw, 2rem)' }}>
                 ¡La estación
               </span>
 
               <span className="font-poppins font-light italic text-[#1A1A1A]"
-                    style={{ fontSize: 'clamp(1.2rem, 2.5vw, 3.5rem)', marginLeft: 'clamp(1rem, 3vw, 5rem)' }}>
+                    style={{ fontSize: 'clamp(1.2rem, 2.5vw, 3.5rem)', marginLeft: 'clamp(1.5rem, 4vw, 5rem)' }}>
                 que esperabas
               </span>
 
@@ -55,7 +55,7 @@ const SorprendeSection = () => {
                style={{
                  fontSize: 'clamp(0.875rem, 1.1vw, 1.25rem)',
                  marginTop: 'clamp(0.5rem, 1vw, 1rem)',
-                 marginLeft: 'clamp(1rem, 3vw, 6rem)'
+                 marginLeft: 'clamp(1rem, 2vw, 4rem)'
                }}>
               <span className="font-semibold">Haz clic</span> y déjate sorprender por la nueva colección de Zara.
             </p>
@@ -65,7 +65,7 @@ const SorprendeSection = () => {
                 fontSize: 'clamp(0.875rem, 1vw, 1.125rem)',
                 padding: 'clamp(0.75rem, 1.2vw, 1.25rem) clamp(1.5rem, 3vw, 2.5rem)',
                 marginTop: 'clamp(1.5rem, 2vw, 2rem)',
-                marginLeft: 'clamp(1rem, 10vw, 13rem)'
+                marginLeft: 'clamp(1rem, 8vw, 10rem)'
               }}
               onClick={() => window.open('https://www.zara.com/pe/es/mujer-nuevo-l1180.html?v1=2544455', '_blank', 'noopener,noreferrer')}
             >
