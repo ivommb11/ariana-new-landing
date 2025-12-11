@@ -23,69 +23,44 @@ const HeroSection = () => {
       `}</style>
 
       {/* CONTENIDO */}
-      <div className="relative z-10 flex flex-col items-center w-full px-4 max-w-7xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center w-full px-4 max-w-4xl 2xl:max-w-7xl mx-auto">
 
         {/* Bloque de Títulos */}
-        <div className="relative w-full flex flex-col items-center mb-6" style={{ lineHeight: '0.85' }}>
+        <div className="relative w-full flex flex-col items-center leading-none text-brand-dark mb-6">
 
             {/* "¿Estás lista para" */}
-            <span className="font-poppins italic font-light text-[#1A1A1A]"
-              style={{
-                fontSize: 'clamp(1rem, 2.2vw, 3rem)',
-                transform: 'translateX(clamp(-0.5rem, -1.2vw, -2.5rem))'
-              }}>
+            <span className="font-poppins italic font-light text-[#1A1A1A] self-center -translate-x-2 md:-translate-x-6 lg:-translate-x-12"
+              style={{ fontSize: 'clamp(1rem, 2.8vw, 4rem)' }}>
               ¿Estás lista para
             </span>
 
             {/* "RENOVAR" */}
-            <h1 className="font-abril uppercase text-[#1A1A1A]"
-              style={{
-                fontSize: 'clamp(2.5rem, 5.5vw, 7rem)',
-                letterSpacing: '0.02em',
-                marginTop: 'clamp(0.25rem, 0.4vw, 0.5rem)',
-                transform: 'translateX(clamp(0.5rem, 1.5vw, 2.5rem))'
-              }}>
+            <h1 className="font-abril uppercase tracking-wide -mt-1 md:mt-1 translate-x-2 md:translate-x-8 lg:translate-x-12"
+              style={{ fontSize: 'clamp(2.5rem, 4.5vw, 6rem)' }}>
               RENOVAR
             </h1>
 
             {/* "tu estilo en" */}
-            <span className="font-poppins italic font-light text-[#1A1A1A]"
-              style={{
-                fontSize: 'clamp(1rem, 2.2vw, 3rem)',
-                marginTop: 'clamp(0rem, 0.4vw, 0.8rem)',
-                transform: 'translateX(clamp(-0.5rem, -2.5vw, -5rem))'
-              }}>
+            <span className="font-poppins italic font-light text-[#1A1A1A] self-center -mt-2 md:mt-2 -translate-x-2 md:-translate-x-6 lg:-translate-x-28"
+              style={{ fontSize: 'clamp(1rem, 2.8vw, 4rem)' }}>
               tu estilo en
             </span>
 
             {/* "PRIMAVERA?" */}
-            <h1 className="font-abril uppercase text-[#1A1A1A]"
-              style={{
-                fontSize: 'clamp(2.5rem, 5.5vw, 7rem)',
-                letterSpacing: '0.02em',
-                marginTop: 'clamp(0rem, 0.4vw, 0.8rem)'
-              }}>
+            <h1 className="font-abril uppercase tracking-wide -mt-2 md:mt-2"
+              style={{ fontSize: 'clamp(2.5rem, 4.5vw, 6rem)' }}>
               PRIMAVERA?
             </h1>
         </div>
 
         {/* Párrafo descriptivo */}
-        <p className="font-poppins text-gray-600 leading-relaxed text-center px-4"
-          style={{
-            fontSize: 'clamp(0.75rem, 0.95vw, 1.1rem)',
-            maxWidth: 'clamp(20rem, 45vw, 38rem)',
-            marginBottom: 'clamp(1.5rem, 1.8vw, 2rem)'
-          }}>
+        <p className="font-poppins text-gray-600 text-xs sm:text-sm md:text-base 2xl:text-1xl max-w-xl 2xl:max-w-3xl leading-relaxed mb-8 text-center px-4">
           Combina la versatilidad con la tendencia y una estética contemporánea que eleva cualquier look con naturalidad con nuestra nueva colección de primavera.
         </p>
 
         {/* Botón */}
         <button
-          className="bg-[#c5d68e] hover:bg-[#b8ca75] text-white font-poppins rounded-full shadow-sm hover:shadow-md transition-all"
-          style={{
-            fontSize: 'clamp(0.875rem, 1vw, 1.25rem)',
-            padding: 'clamp(0.9rem, 1.3vw, 1.4rem) clamp(1.8rem, 2.5vw, 2.3rem)'
-          }}
+          className="bg-[#c5d68e] hover:bg-[#b8ca75] text-white font-poppins text-base md:text-xl 2xl:text-2xl px-8 py-5 md:px-10 md:py-4 2xl:px-12 2xl:py-6 rounded-full shadow-sm hover:shadow-md transition-all"
           onClick={() => {
             window.open('https://www.zara.com/pe/es/mujer-nuevo-l1180.html?v1=2544455', '_blank', 'noopener,noreferrer');
           }}
