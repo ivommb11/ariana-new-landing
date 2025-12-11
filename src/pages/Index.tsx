@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import TendenciasSection from "@/components/TendenciasSection";
 import CombinaSection from "@/components/CombinaSection";
 import ArmarioSection from "@/components/ArmarioSection";
+import SorprendeSection from "@/components/SorprendeSection"
 import RenuevaSection from "@/components/RenuevaSection";
 import Footer from "@/components/Footer";
 
@@ -15,6 +16,7 @@ const Index = () => {
         <TendenciasSection />
         <CombinaSection />
         <ArmarioSection />
+        <SorprendeSection />
         <RenuevaSection />
       </main>
       <Footer />

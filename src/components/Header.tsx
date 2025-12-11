@@ -8,6 +8,7 @@ const Header = () => {
     { id: "descubre", label: "DESCUBRE" },
     { id: "combina", label: "COMBINA" },
     { id: "destaca", label: "DESTACA" },
+    { id: "sorprende", label: "SORPRENDE" },
     { id: "renueva", label: "RENUEVA" },
   ];
 

@@ -20,6 +20,7 @@ const Footer = () => {
       { label: "DESCUBRE", href: "#descubre" }, // TendenciasSection
       { label: "COMBINA", href: "#combina" },    // CombinaSection
       { label: "DESTACA", href: "#destaca" },    // RenuevaSection
+      { label: "SORPRENDE", href: "#sorprende" }    // SorprendeSection
     ],
     equipo: [
       { name: "Calderon Ariana" },
