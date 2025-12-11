@@ -29,27 +29,44 @@ const SorprendeSection = () => {
 
           <div className="flex flex-col items-start text-left py-12 self-center md:self-start md:pt-32 w-full">
 
-            {/* TÍTULO - Tamaños más controlados sin scale */}
-            <div className="flex flex-col items-start leading-none mb-8 w-full">
-              <span className="text-xl md:text-2xl lg:text-3xl xl:text-5xl text-[#1A1A1A] font-poppins font-light italic translate-x-2 lg:translate-x-6">
+            {/* TÍTULO - Usando vw para mantener proporciones */}
+            <div className="flex flex-col items-start mb-8 w-full" style={{ lineHeight: '0.9' }}>
+              <span className="font-poppins font-light italic text-[#1A1A1A]"
+                    style={{ fontSize: 'clamp(1.2rem, 2.5vw, 3.5rem)' }}>
                 ¡La estación
               </span>
 
-              <span className="text-xl md:text-2xl lg:text-3xl xl:text-5xl text-[#1A1A1A] font-poppins font-light italic translate-x-6 lg:translate-x-20 mt-1 lg:mt-4">
+              <span className="font-poppins font-light italic text-[#1A1A1A]"
+                    style={{ fontSize: 'clamp(1.2rem, 2.5vw, 3.5rem)', marginLeft: 'clamp(1rem, 3vw, 5rem)' }}>
                 que esperabas
               </span>
 
-              {/* Reducido de 9xl a valores más razonables que escalan mejor */}
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-[#1A1A1A] font-abril uppercase tracking-tight font-light mt-1 lg:mt-1 whitespace-nowrap">
+              <h2 className="font-abril uppercase font-light text-[#1A1A1A] whitespace-nowrap"
+                  style={{
+                    fontSize: 'clamp(2.5rem, 6vw, 8rem)',
+                    marginTop: 'clamp(0.25rem, 0.5vw, 0.5rem)',
+                    letterSpacing: '-0.02em'
+                  }}>
                 YA FLORECIÓ!
               </h2>
             </div>
 
-            <p className="font-poppins text-[#1A1A1A] text-sm md:text-base lg:text-base xl:text-lg 2xl:text-xl leading-relaxed max-w-xs md:max-w-md lg:max-w-lg mt-2 translate-x-4 lg:translate-x-24">
+            <p className="font-poppins text-[#1A1A1A] leading-relaxed max-w-lg"
+               style={{
+                 fontSize: 'clamp(0.875rem, 1.1vw, 1.25rem)',
+                 marginTop: 'clamp(0.5rem, 1vw, 1rem)',
+                 marginLeft: 'clamp(1rem, 3vw, 6rem)'
+               }}>
               <span className="font-semibold">Haz clic</span> y déjate sorprender por la nueva colección de Zara.
             </p>
 
-            <button className="bg-[#c5d68e] hover:bg-[#b8ca75] text-white font-poppins text-sm md:text-base lg:text-base xl:text-lg px-6 py-3 lg:px-8 lg:py-3 xl:px-10 xl:py-4 rounded-full shadow-sm hover:shadow-md transition-all mt-8 translate-x-4 lg:translate-x-52"
+            <button className="bg-[#c5d68e] hover:bg-[#b8ca75] text-white font-poppins rounded-full shadow-sm hover:shadow-md transition-all"
+              style={{
+                fontSize: 'clamp(0.875rem, 1vw, 1.125rem)',
+                padding: 'clamp(0.75rem, 1.2vw, 1.25rem) clamp(1.5rem, 3vw, 2.5rem)',
+                marginTop: 'clamp(1.5rem, 2vw, 2rem)',
+                marginLeft: 'clamp(1rem, 10vw, 13rem)'
+              }}
               onClick={() => window.open('https://www.zara.com/pe/es/mujer-nuevo-l1180.html?v1=2544455', '_blank', 'noopener,noreferrer')}
             >
               Conoce más ⏵
